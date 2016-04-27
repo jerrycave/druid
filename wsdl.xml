@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://spring.orderInfo/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="OrderInfoBeanImplService" targetNamespace="http://spring.orderInfo/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://spring.orderInfo/" elementFormDefault="unqualified" targetNamespace="http://spring.orderInfo/" version="1.0">
+
+  <xs:element name="debitOrder" type="tns:debitOrder"/>
+
+  <xs:element name="debitOrderResponse" type="tns:debitOrderResponse"/>
+
+  <xs:element name="getPayResult" type="tns:getPayResult"/>
+
+  <xs:element name="getPayResultResponse" type="tns:getPayResultResponse"/>
+
+  <xs:element name="sendAllNotice" type="tns:sendAllNotice"/>
+
+  <xs:element name="sendAllNoticeResponse" type="tns:sendAllNoticeResponse"/>
+
+  <xs:complexType name="debitOrder">
+    <xs:sequence>
+      <xs:element form="qualified" minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="debitOrderResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="sendAllNotice">
+    <xs:sequence>
+      <xs:element form="qualified" minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="sendAllNoticeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getPayResult">
+    <xs:sequence>
+      <xs:element form="qualified" minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getPayResultResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="debitOrder">
+    <wsdl:part element="tns:debitOrder" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sendAllNotice">
+    <wsdl:part element="tns:sendAllNotice" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sendAllNoticeResponse">
+    <wsdl:part element="tns:sendAllNoticeResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="debitOrderResponse">
+    <wsdl:part element="tns:debitOrderResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPayResult">
+    <wsdl:part element="tns:getPayResult" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPayResultResponse">
+    <wsdl:part element="tns:getPayResultResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="OrderInfoBean">
+    <wsdl:operation name="debitOrder">
+      <wsdl:input message="tns:debitOrder" name="debitOrder">
+    </wsdl:input>
+      <wsdl:output message="tns:debitOrderResponse" name="debitOrderResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendAllNotice">
+      <wsdl:input message="tns:sendAllNotice" name="sendAllNotice">
+    </wsdl:input>
+      <wsdl:output message="tns:sendAllNoticeResponse" name="sendAllNoticeResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPayResult">
+      <wsdl:input message="tns:getPayResult" name="getPayResult">
+    </wsdl:input>
+      <wsdl:output message="tns:getPayResultResponse" name="getPayResultResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OrderInfoBeanImplServiceSoapBinding" type="tns:OrderInfoBean">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="debitOrder">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="debitOrder">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="debitOrderResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendAllNotice">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="sendAllNotice">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="sendAllNoticeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPayResult">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getPayResult">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getPayResultResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OrderInfoBeanImplService">
+    <wsdl:port binding="tns:OrderInfoBeanImplServiceSoapBinding" name="OrderInfoBeanImplPort">
+      <soap:address location="http://127.0.0.1:8080/yaoxie/service/orderInfoBean"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
